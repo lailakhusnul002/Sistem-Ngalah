@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\LoginController;
+use App\Http\Controllers\API\ViolationaController;
 use App\Http\Controllers\API\WalisantriController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -29,6 +30,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
+Route::post('violationa', [ViolationaController::class, 'store']);
+Route::post('get-violationa', [ViolationaController::class, 'getData']);
 });
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
