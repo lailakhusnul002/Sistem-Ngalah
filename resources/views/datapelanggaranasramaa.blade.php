@@ -110,7 +110,7 @@
                     @foreach ($datapelanggarana as $index => $row)
                     <tr>
                         <th scope="row">{{ $index + $datapelanggarana->firstItem() }}</th>
-                        <td>{{$row->student->nama}}</td>
+                        <td>{{$row->student->student_id}}</td>
                         <td>
                             <img src="{{ asset('fotosantri/'.$row->foto) }}" alt="" style="width: 40px;">
                         </td>
