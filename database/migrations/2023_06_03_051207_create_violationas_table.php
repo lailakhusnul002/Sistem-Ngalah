@@ -15,7 +15,8 @@ class CreateViolationasTable extends Migration
     {
         Schema::create('violationas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->unique()->constrained('users');
+            // $table->foreignId('student_id')->unique()->constrained('students');
+            $table->foreignId('user_id')->constrained('users');
             $table->enum('jeniskelamin',['lelaki','perempuan']);
             $table->string('pelanggaran');
             $table->enum('jenispelanggaran',['ringan','sedang','berat']);

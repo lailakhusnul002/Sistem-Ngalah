@@ -27,21 +27,21 @@
                             
                 
 
-                            <!-- <div class="mb-3">
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">ID Yayasan</label>
                                 <input type="text" name="idyayasan" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                                     @error('idyayasan')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                            </div> -->
+                            </div>
 
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama Santri</label>
-                                <select class="form-control" name="student_id" aria-label="Default select example">
+                                <select class="form-control" name="user_id" aria-label="Default select example">
                                     <option selected>Pilih Santri</option>
-                                    @foreach($santri as $s)
-                                    <option value="{{$s->id}}">{{$s->nama}}</option>
+                                    @foreach($user as $user)
+                                    <option value="{{$user->id}}">{{$user->name}}</option>
                                     @endforeach
 
                                 </select>

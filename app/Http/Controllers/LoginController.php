@@ -27,6 +27,7 @@ class LoginController extends Controller
 
     public function registeruser(Request $request){
         User::create([
+            'id_yayasan' => $request->id_yayasan,
             'name' => $request->name,
             'email' => $request->email,
             'password' => bcrypt($request->password),

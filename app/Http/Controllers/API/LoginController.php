@@ -19,11 +19,13 @@ class LoginController extends Controller
     public function register(Request $request)
     {
         $request->validate([
+            'id_yayasan' => 'required',
             'name' => 'required',
             'email' => 'required',
             'password' => 'required'
         ]);
         $user=User::create([
+            'id_yayasan' => $request->id_yayasan,
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password)

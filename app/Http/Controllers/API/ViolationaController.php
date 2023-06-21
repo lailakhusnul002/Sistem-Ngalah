@@ -32,6 +32,7 @@ class ViolationaController extends Controller
     {
         try {
             $request->validate([
+                'user_id' => 'required',
                 'jeniskelamin' => 'required',
                 'pelanggaran' => 'required',
                 'jenispelanggaran' => 'required',

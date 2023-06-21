@@ -92,13 +92,14 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
+                        <th scope="col">ID Yayasan</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Foto</th>
                         <th scope="col">Jenis Kelamin</th>
                         <th scope="col">Pelanggaran</th>
                         <th scope="col">Jenis Pelanggaran</th>
                         <th scope="col">Hukuman</th>
-                        <th scope="col">No telpon</th>
+                       
                         <th scope="col">Dibuat</th>
                         <th scope="col">Aksi</th>
                     </tr>
@@ -110,7 +111,8 @@
                     @foreach ($datapelanggarana as $index => $row)
                     <tr>
                         <th scope="row">{{ $index + $datapelanggarana->firstItem() }}</th>
-                        <td>{{$row->student->nama}}</td>
+                        <td>{{$row->user->id_yayasan}}</td>
+                        <td>{{$row->user->name}}</td>
                         <td>
                             <img src="{{ asset('fotosantri/'.$row->foto) }}" alt="" style="width: 40px;">
                         </td>
@@ -118,7 +120,7 @@
                         <td>{{ $row->pelanggaran }}</td>
                         <td>{{ $row->jenispelanggaran }}</td>
                         <td>{{ $row->hukuman }}</td>
-                        <td>0{{ $row->notelpon }}</td>
+                       
                         <td>{{ $row->created_at }}</td>
                         <td>
                             <a href="/tampilkandatapelanggarana/{{ $row->id }}" class="btn btn-info">Edit</a>

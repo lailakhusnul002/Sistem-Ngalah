@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Exports\ViolationaExport;
 use App\Imports\ViolationaImport;
 use App\Models\Student;
+use App\Models\User;
 use App\Models\Violationa;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
@@ -25,7 +26,7 @@ class ViolationaController extends Controller
         // }
         $data = [
             'datapelanggarana' => Violationa::paginate(5),
-            'student' => new Student(),
+            'user' => new User(),
         ];
 
         
@@ -34,8 +35,8 @@ class ViolationaController extends Controller
 
     public function tambahpelanggarana(){
         $data = [
-            'datapelanggaran' => Violationa::all(),
-            'santri' => Student::all()
+            'datapelanggarana' => Violationa::all(),
+            'user' => User::all()
         ];
         // $datapelanggarana = Violationa::all();
         return view('tambahdatapelanggarana',$data);
@@ -44,7 +45,7 @@ class ViolationaController extends Controller
     public function insertdatapelanggarana(Request $request){
         // dd($request->all());
         $this->validate($request,[
-                'student_id' => 'required',
+                'user_id' => 'required',
                 'jeniskelamin' => 'required',
                 'pelanggaran' => 'required',
                 'jenispelanggaran' => 'required',
@@ -57,7 +58,7 @@ class ViolationaController extends Controller
          $request->foto = $request->file('foto')->getClientOriginalName();
 
          Violationa::create([
-             'student_id' => $request->student_id,
+             'user_id' => $request->user_id,
              'jeniskelamin' => $request->jeniskelamin,
              'pelanggaran' => $request->pelanggaran,
              'jenispelanggaran' => $request->jenispelanggaran,

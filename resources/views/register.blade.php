@@ -30,7 +30,15 @@
         <form action="/registeruser" method="post">
         @csrf
         <div class="input-group mb-3">
-            <input type="text" class="form-control" name="name" placeholder="name">
+            <input type="text" class="form-control" name="id_yayasan" placeholder="ID Yayasan">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-envelope"></span>
+              </div>
+            </div>
+          </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" name="name" placeholder="Name">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
