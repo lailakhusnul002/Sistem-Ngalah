@@ -91,7 +91,11 @@ class ViolationaController extends Controller
         //
     }
     public function getData(){
-        $data = User::with('violationas')->where('id', Auth::user()->id)->first();
-        return $data;
+        $data = User::with('violationa')->get();
+        if($data){
+            return ApiFormatter::createApi(200, 'Success', $data);
+        }else{
+            return ApiFormatter::createApi(400, 'Failed');
+        }
     }
 }

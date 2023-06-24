@@ -31,7 +31,7 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
 Route::post('violationa', [ViolationaController::class, 'store']);
-Route::post('get-violationa', [ViolationaController::class, 'getData']);
+Route::get('getdata', [ViolationaController::class, 'getData']);
 });
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
