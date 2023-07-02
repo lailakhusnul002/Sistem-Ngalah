@@ -35,7 +35,7 @@ class ImageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function  store(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'image' => 'max:10000|mimes:jpg,jpeg,png,gif',
