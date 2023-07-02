@@ -3,6 +3,7 @@
 use App\Http\Controllers\API\LoginController;
 use App\Http\Controllers\API\ViolationaController;
 use App\Http\Controllers\API\WalisantriController;
+use App\Http\Controllers\ImageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +33,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 Route::post('violationa', [ViolationaController::class, 'store']);
 Route::get('getdata', [ViolationaController::class, 'getData']);
+Route::post('/add-image', [ImageController::class, 'store']);
 });
 
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
