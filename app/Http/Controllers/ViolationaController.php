@@ -72,23 +72,23 @@ class ViolationaController extends Controller
         //  ]);
        
 
-        $file_dir = 'public/foto/';
+        // $file_dir = 'public/foto/';
        
 
-        if ($request->hasFile('foto')) {
+        // if ($request->hasFile('foto')) {
 
-            $foto = $request->file('foto');
-            // $filename = $image->getClientOriginalName();
-            $image_uploaded = $foto->store($file_dir);
+        //     $foto = $request->file('foto');
+        //     // $filename = $image->getClientOriginalName();
+        //     $image_uploaded = $foto->store($file_dir);
 
-            $url = Storage::url($image_uploaded);
+        //     $url = Storage::url($image_uploaded);
 
-            URL::to('/'). $url;
+        //     return URL::to('/'). $url;
            
         
 
         
-        }
+        // }
         // $file_dir = $request->foto->getClientOriginalName();
         // $image = $request->file('foto')->store('public/foto');
         // $url = Storage::url($image);
@@ -102,9 +102,9 @@ class ViolationaController extends Controller
 
         //     return URL::to('/'). $url;
 
-        // $filename = $request->foto->getClientOriginalName();
-        // $request->file('foto')->move('fotosantri/',$request->file('foto')->getClientOriginalName());
-        // $request->foto = $request->file('foto')->getClientOriginalName();
+        $filename = $request->foto->getClientOriginalName();
+        $request->file('foto')->move('fotosantri/',$request->file('foto')->getClientOriginalName());
+        $request->foto = $request->file('foto')->getClientOriginalName();
         
          Violationa::create([
              'user_id' => $request->user_id,
