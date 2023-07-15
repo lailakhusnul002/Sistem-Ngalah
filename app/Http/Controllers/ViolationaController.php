@@ -10,6 +10,8 @@ use App\Models\Violationa;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\URL;
 use Maatwebsite\Excel\Facades\Excel;
 
 class ViolationaController extends Controller
@@ -50,13 +52,60 @@ class ViolationaController extends Controller
                 'pelanggaran' => 'required',
                 'jenispelanggaran' => 'required',
                 'hukuman' => 'required',
-                'foto' => 'required|mimes:jpg,png',
+                'foto' => 'required|mimes:jpg,png,jpeg',
+                
          ]);
 
-         $filename = $request->foto->getClientOriginalName();
-         $request->file('foto')->move('fotosantri/',$request->file('foto')->getClientOriginalName());
-         $request->foto = $request->file('foto')->getClientOriginalName();
+        
+        //  $request->file('foto')->move('fotosantri/',$request->file('foto')->getClientOriginalName());
+        //  $request->foto = $request->file('foto')->getClientOriginalName();
 
+        //
+        //  Violationa::create([
+        //      'user_id' => $request->user_id,
+        //      'jeniskelamin' => $request->jeniskelamin,
+        //      'pelanggaran' => $request->pelanggaran,
+        //      'jenispelanggaran' => $request->jenispelanggaran,
+        //      'hukuman' => $request->hukuman,
+        //      'foto' => $image,
+            
+        //  ]);
+       
+
+        $file_dir = 'public/foto/';
+       
+
+        if ($request->hasFile('foto')) {
+
+            $foto = $request->file('foto');
+            // $filename = $image->getClientOriginalName();
+            $image_uploaded = $foto->store($file_dir);
+
+            $url = Storage::url($image_uploaded);
+
+            URL::to('/'). $url;
+           
+        
+
+        
+        }
+        // $file_dir = $request->foto->getClientOriginalName();
+        // $image = $request->file('foto')->store('public/foto');
+        // $url = Storage::url($image);
+
+        //     return URL::to('/'). $url;
+
+        // $filename = $request->foto->getClientOriginalName();
+        //  $request->file('foto')->move('public/foto/',$request->file('foto')->getClientOriginalName());
+        //  $request->foto = $request->file('foto')->getClientOriginalName();
+        //  $url = Storage::url($request);
+
+        //     return URL::to('/'). $url;
+
+        // $filename = $request->foto->getClientOriginalName();
+        // $request->file('foto')->move('fotosantri/',$request->file('foto')->getClientOriginalName());
+        // $request->foto = $request->file('foto')->getClientOriginalName();
+        
          Violationa::create([
              'user_id' => $request->user_id,
              'jeniskelamin' => $request->jeniskelamin,
