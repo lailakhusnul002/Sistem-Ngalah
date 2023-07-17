@@ -28,10 +28,10 @@
       </div><!-- /.container-fluid -->
     </div>
 
-    <div class="container m-5 ">
+    <div class="container-fluid ">
         <a href="/tambahpelanggarana" class="btn btn-success">Tambah +</a>
         {{-- {{ Session::get('halaman_url') }} --}}
-        <div class="row g-3 align-items-center mt-2">
+        <div class="row g-3 align-items-center mt-2 mb-2">
             <div class="col-auto">
                 <form action="/pelanggarana" method="GET">
                     <input type="search" id="inputPassword6" name="search" class="form-control"
@@ -82,58 +82,65 @@
 
 
         </div>
-        <div class="row m-5">
-            {{-- @if ($message = Session::get('success'))
-            <div class="alert alert-success" role="alert">
-                {{ $message }}
-            </div>
-            @endif --}}
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">ID Yayasan</th>
-                        <th scope="col">Nama</th>
-                        <th scope="col">Foto</th>
-                        <th scope="col">Jenis Kelamin</th>
-                        <th scope="col">Pelanggaran</th>
-                        <th scope="col">Jenis Pelanggaran</th>
-                        <th scope="col">Hukuman</th>
-                       
-                        <th scope="col">Dibuat</th>
-                        <th scope="col">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @php
-                    $no = 1;
-                    @endphp
-                    @foreach ($datapelanggarana as $index => $row)
-                    <tr>
-                        <th scope="row">{{ $index + $datapelanggarana->firstItem() }}</th>
-                        <td>{{$row->user->id_yayasan}}</td>
-                        <td>{{$row->user->name}}</td>
-                        <td>
-                            <img src="{{ asset('storage/'.$row->foto) }}" alt="" style="width: 40px;">
-                        </td>
-                        <td>{{ $row->jeniskelamin }}</td>
-                        <td>{{ $row->pelanggaran }}</td>
-                        <td>{{ $row->jenispelanggaran }}</td>
-                        <td>{{ $row->hukuman }}</td>
-                       
-                        <td>{{ $row->created_at }}</td>
-                        <td>
-                            <a href="/tampilkandatapelanggarana/{{ $row->id }}" class="btn btn-info">Edit</a>
-                            <a href="#" class="btn btn-danger delete" data-id="{{ $row->id }}"
-                                data-nama="{{ $row->nama }}">Delete</a>
-                        </td>
-                    </tr>
-                    @endforeach
-
-
-                </tbody>
-            </table>
-            {{ $datapelanggarana->links() }}
+        <div class="col">
+            <!-- <div class="card">
+                <div class="card-body"> -->
+    
+                    <div class="row">
+                        {{-- @if ($message = Session::get('success'))
+                        <div class="alert alert-success" role="alert">
+                            {{ $message }}
+                        </div>
+                        @endif --}}
+                        <table id="example1" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="row">No</th>
+                                    <th>ID Yayasan</th>
+                                    <th>Nama</th>
+                                    <th>Foto</th>
+                                    <th>Jenis Kelamin</th>
+                                    <th>Pelanggaran</th>
+                                    <th>Jenis Pelanggaran</th>
+                                    <th>Hukuman</th>
+                                    <th>Dibuat</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @php
+                                $no = 1;
+                                @endphp
+                                @foreach ($datapelanggarana as $index => $row)
+                                <tr>
+                                    <th scope="row">{{ $index + $datapelanggarana->firstItem() }}</th>
+                                    <td>{{$row->user->id_yayasan}}</td>
+                                    <td>{{$row->user->name}}</td>
+                                    <td>
+                                        <img src="{{ asset($row->foto) }}" alt="" style="width: 40px;">
+                                    </td>
+                                    <td>{{ $row->jeniskelamin }}</td>
+                                    <td>{{ $row->pelanggaran }}</td>
+                                    <td>{{ $row->jenispelanggaran }}</td>
+                                    <td>{{ $row->hukuman }}</td>
+                                   
+                                    <td>{{ $row->created_at->format('d F Y') }}</td>
+            
+                                    <td class="row">
+                                        <a href="/tampilkandatapelanggarana/{{ $row->id }}" class="btn btn-info btn-sm mb-2">Edit</a>
+                                        <a href="#" class="btn btn-danger btn-sm delete" data-id="{{ $row->id }}"
+                                            data-nama="{{ $row->nama }}">Delete</a>
+                                    </td>
+                                </tr>
+                                @endforeach
+            
+            
+                            </tbody>
+                        </table>
+                        {{ $datapelanggarana->links() }}
+                    </div>
+                <!-- </div>
+            </div> -->
         </div>
     </div>
 
@@ -184,6 +191,35 @@
                 }
             });
     });
+</script>
+<script src="{{asset('template/plugins/datatables-buttons/js/dataTables.buttons.min.js')}}"></script>
+<script src="{{asset('template/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('template/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('template/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('template/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{asset('template/plugins/datatables-buttons/js/buttons.bootstrap4.min.js')}}"></script>
+<script src="{{asset('template/plugins/jszip/jszip.min.js')}}"></script>
+<script src="{{asset('template/plugins/pdfmake/pdfmake.min.js')}}"></script>
+<script src="{{asset('template/plugins/pdfmake/vfs_fonts.js')}}"></script>
+<script src="{{asset('template/plugins/datatables-buttons/js/buttons.html5.min.js')}}"></script>
+<script src="{{asset('template/plugins/datatables-buttons/js/buttons.print.min.js')}}"></script>
+<script src="{{asset('template/plugins/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
 </script>
 
 

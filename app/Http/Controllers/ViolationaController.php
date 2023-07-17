@@ -26,8 +26,10 @@ class ViolationaController extends Controller
            
         //     Session::put('halaman_url', request()->fullUrl());
         // }
+
+        $datapelanggarana = Violationa::orderBy('created_at', 'desc')->paginate(5);
         $data = [
-            'datapelanggarana' => Violationa::paginate(5),
+            'datapelanggarana' => $datapelanggarana,
             'user' => new User(),
         ];
 
@@ -109,7 +111,10 @@ class ViolationaController extends Controller
         $requestData = $request->all();
         $filename = time().$request->file('foto')->getClientOriginalName();
         $path = $request->file('foto')->storeAs('images', $filename, 'public');
-        $requestData["photo"] = '/storage/'.$path;
+        $fullUrl = Storage::url($path);
+        $requestData["foto"] = $fullUrl;
+
+        // $requestData["photo"] = '/storage/'.$path;
         
          Violationa::create([
              'user_id' => $request->user_id,
@@ -117,7 +122,7 @@ class ViolationaController extends Controller
              'pelanggaran' => $request->pelanggaran,
              'jenispelanggaran' => $request->jenispelanggaran,
              'hukuman' => $request->hukuman,
-             'foto' => $path,
+             'foto' => $fullUrl,
             
          ]);
 
