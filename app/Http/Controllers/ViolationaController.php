@@ -102,9 +102,14 @@ class ViolationaController extends Controller
 
         //     return URL::to('/'). $url;
 
-        $filename = $request->foto->getClientOriginalName();
-        $request->file('foto')->move('fotosantri/',$request->file('foto')->getClientOriginalName());
-        $request->foto = $request->file('foto')->getClientOriginalName();
+        // $filename = $request->foto->getClientOriginalName();
+        // $request->file('foto')->move('fotosantri/',$request->file('foto')->getClientOriginalName());
+        // $request->foto = $request->file('foto')->getClientOriginalName();
+
+        $requestData = $request->all();
+        $filename = time().$request->file('foto')->getClientOriginalName();
+        $path = $request->file('foto')->storeAs('images', $filename, 'public');
+        $requestData["photo"] = '/storage/'.$path;
         
          Violationa::create([
              'user_id' => $request->user_id,
@@ -112,7 +117,7 @@ class ViolationaController extends Controller
              'pelanggaran' => $request->pelanggaran,
              'jenispelanggaran' => $request->jenispelanggaran,
              'hukuman' => $request->hukuman,
-             'foto' => $request->foto,
+             'foto' => $path,
             
          ]);
 

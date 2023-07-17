@@ -17,6 +17,14 @@ class Violationa extends Model
     // public function student(){
     //     return $this->belongsTo(Student::class);
     // }
+
+//     public function getImageAttribute($value)
+// {
+//     // $value adalah nilai dari kolom 'image' dalam tabel
+//     // Ubah nilai menjadi URL dengan menggunakan helper asset()
+//     return $value ? asset('fotosantri/' . $value) : null;
+// }
+
     public function user(){
         return $this->belongsTo(User::class);
     }

@@ -114,7 +114,7 @@
                         <td>{{$row->user->id_yayasan}}</td>
                         <td>{{$row->user->name}}</td>
                         <td>
-                            <img src="{{ asset('fotosantri/'.$row->foto) }}" alt="" style="width: 40px;">
+                            <img src="{{ asset('storage/'.$row->foto) }}" alt="" style="width: 40px;">
                         </td>
                         <td>{{ $row->jeniskelamin }}</td>
                         <td>{{ $row->pelanggaran }}</td>
