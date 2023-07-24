@@ -67,7 +67,7 @@
 
     
         <p class="mb-0">
-          <a href="/register" class="text-center">Register a new membership</a>
+          <a href="/register" class="text-center">Daftarkan Santri Baru Di Sini</a>
         </p>
       </div>
       <!-- /.card-body -->

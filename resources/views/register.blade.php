@@ -25,7 +25,7 @@
         <a href="../../index2.html" class="h1"><b>Pondok Pesantren Ngalah</b></a>
       </div>
       <div class="card-body">
-        <p class="login-box-msg">Register in to start your session</p>
+        <p class="login-box-msg">Pendaftaran Aplikasi Pelanggaran Santri</p>
 
         <form action="/registeruser" method="post">
         @csrf
