@@ -20,8 +20,8 @@ use App\Models\Student;
 
 Route::get('/', function () {
     $jumlahsantri = Student::count();
-    $jumlahsantrilelaki = Student::where('jeniskelamin','lelaki')->count();
-    $jumlahsantriperempuan = Student::where('jeniskelamin','perempuan')->count();
+    $jumlahsantrilelaki = Student::where('jeniskelamin','Lelaki')->count();
+    $jumlahsantriperempuan = Student::where('jeniskelamin','Perempuan')->count();
     
 
     return view('welcome',compact('jumlahsantri','jumlahsantrilelaki','jumlahsantriperempuan'));

@@ -17,7 +17,7 @@ class CreateViolationasTable extends Migration
             $table->id();
             // $table->foreignId('student_id')->unique()->constrained('students');
             $table->foreignId('user_id')->constrained('users');
-            $table->enum('jeniskelamin',['lelaki','perempuan']);
+            $table->enum('jeniskelamin',['Lelaki','Perempuan']);
             $table->string('pelanggaran');
             $table->enum('jenispelanggaran',['Ringan','Sedang','Berat']);
             $table->string('hukuman');
