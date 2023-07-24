@@ -19,7 +19,7 @@ class CreateViolationasTable extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->enum('jeniskelamin',['lelaki','perempuan']);
             $table->string('pelanggaran');
-            $table->enum('jenispelanggaran',['ringan','sedang','berat']);
+            $table->enum('jenispelanggaran',['Ringan','Sedang','Berat']);
             $table->string('hukuman');
             $table->string('foto');
             $table->timestamps();

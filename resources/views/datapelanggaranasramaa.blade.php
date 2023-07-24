@@ -16,7 +16,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Data Pelanggaran Asrama A</h1>
+            <h1 class="m-0">Data Pelanggaran Santri</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -32,26 +32,26 @@
         <a href="/tambahpelanggarana" class="btn btn-success">Tambah +</a>
         {{-- {{ Session::get('halaman_url') }} --}}
         <div class="row g-3 align-items-center mt-2 mb-2">
-            <div class="col-auto">
+            <!-- <div class="col-auto">
                 <form action="/pelanggarana" method="GET">
                     <input type="search" id="inputPassword6" name="search" class="form-control"
                         aria-describedby="passwordHelpInline">
                 </form>
-            </div>
+            </div> -->
 
             <!-- <div class="col-auto">
                 <a href="/exportpdfpelanggarana" class="btn btn-info">Export PDF</a>
             </div> -->
-            <div class="col-auto">
+            <!-- <div class="col-auto">
                 <a href="/exportexcelpelanggarana" class="btn btn-success">Export Excel</a>
-            </div>
+            </div> -->
 
-            <div class="col-auto">
+            <!-- <div class="col-auto"> -->
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Import Data
                 </button>
-            </div>
+            </div> -->
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"

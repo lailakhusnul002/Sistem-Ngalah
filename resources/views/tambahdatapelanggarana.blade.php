@@ -27,14 +27,14 @@
                             
                 
 
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">ID Yayasan</label>
                                 <input type="text" name="idyayasan" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp">
                                     @error('idyayasan')
                                         <div class="alert alert-danger">{{ $message }}</div>
                                     @enderror
-                            </div>
+                            </div> -->
 
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama Santri</label>
@@ -51,8 +51,8 @@
                                 <label for="exampleInputEmail1" class="form-label">Jenis Kelamin</label>
                                 <select class="form-select" name="jeniskelamin" aria-label="Default select example">
                                     <option selected>Pilih Jenis Kelamin</option>
-                                    <option value="lelaki">lelaki</option>
-                                    <option value="perempuan">perempuan</option>
+                                    <option value="Lelaki">Lelaki</option>
+                                    <option value="Perempuan">Perempuan</option>
                                     
 
                                 </select>
@@ -71,9 +71,9 @@
                                 <label for="exampleInputEmail1" class="form-label">Jenis Pelanggaran</label>
                                 <select class="form-select" name="jenispelanggaran" aria-label="Default select example">
                                     <option selected>Pilih Jenis Pelanggaran</option>
-                                    <option value="ringan">ringan</option>
-                                    <option value="sedang">sedang</option>
-                                    <option value="berat">berat</option>
+                                    <option value="Ringan">Ringan</option>
+                                    <option value="Sedang">Sedang</option>
+                                    <option value="Berat">Berat</option>
                                     
 
                                 </select>

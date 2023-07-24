@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <form action="/updatedatapelanggarana/{{ $datapelanggarana->id }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
                                 <input type="text" name="nama" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $datapelanggarana->nama }}">
@@ -22,7 +22,7 @@
                                 <label for="exampleInputEmail1" class="form-label">ID Yayasan</label>
                                 <input type="text" name="idyayasan" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $datapelanggarana->idyayasan }}">
-                            </div>
+                            </div> -->
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Jenis Kelamin</label>
                                 <select class="form-select" name="jeniskelamin" aria-label="Default select example">
@@ -42,9 +42,9 @@
                                 <label for="exampleInputEmail1" class="form-label">Jenis Pelanggaran</label>
                                 <select class="form-select" name="jenispelanggaran" aria-label="Default select example">
                                     <option selected>{{ $datapelanggarana->jenispelanggaran }}</option>
-                                    <option value="ringan">ringan</option>
-                                    <option value="sedang">sedang</option>
-                                    <option value="berat">berat</option>
+                                    <option value="Ringan">Ringan</option>
+                                    <option value="Sedang">Sedang</option>
+                                    <option value="Berat">Berat</option>
                                    
                                 </select>
                             </div>
@@ -55,11 +55,11 @@
                                     aria-describedby="emailHelp" value="{{ $datapelanggarana->hukuman }}">
                             </div>
 
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">No Telpon</label>
                                 <input type="number" name="notelpon" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $datapelanggarana->notelpon }}">
-                            </div>
+                            </div> -->
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>

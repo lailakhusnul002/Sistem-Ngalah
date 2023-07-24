@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <form action="/updatedata/{{ $data->id }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
                                 <input type="text" name="nama" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->nama }}">
@@ -22,7 +22,7 @@
                                 <label for="exampleInputEmail1" class="form-label">ID Yayasan</label>
                                 <input type="text" name="idyayasan" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->idyayasan }}">
-                            </div>
+                            </div> -->
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Jenis Kelamin</label>
                                 <select class="form-select" name="jeniskelamin" aria-label="Default select example">
@@ -32,16 +32,16 @@
                                    
                                 </select>
                             </div>
-                            <div class="mb-3">
+                            <!-- <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Alamat</label>
                                 <input type="text" name="alamat" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->alamat }}">
-                            </div>
-                            <div class="mb-3">
+                            </div> -->
+                            <!-- <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">No Telpon</label>
                                 <input type="number" name="notelpon" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" value="{{ $data->notelpon }}">
-                            </div>
+                            </div> -->
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>

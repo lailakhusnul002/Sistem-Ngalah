@@ -94,7 +94,6 @@
                         <th scope="col">#</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Foto</th>
-                        <th scope="col">ID Yayasan</th>
                         <th scope="col">Jenis Kelamin</th>
                         <th scope="col">Alamat</th>
                         <th scope="col">No telpon</th>
@@ -115,7 +114,7 @@
                         <td>
                             <img src="{{ asset('fotosantri/'.$row->foto) }}" alt="" style="width: 40px;">
                         </td>
-                        <td>{{ $row->idyayasan }}</td>
+                        
                         <td>{{ $row->jeniskelamin }}</td>
                         <td>{{ $row->alamat }}</td>
                         <td>0{{$row->notelpon }}</td>

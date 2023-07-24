@@ -163,17 +163,17 @@ class ViolationaController extends Controller
     //     return $pdf->download('datapelanggarana.pdf');
     // }
 
-    public function exportexcelpelanggarana(){
-        return Excel::download(new ViolationaExport, 'datapelanggarana.xlsx');
-    }
+    // public function exportexcelpelanggarana(){
+    //     return Excel::download(new ViolationaExport, 'datapelanggarana.xlsx');
+    // }
 
-    public function importexcelpelanggarana(Request $request){
-        $datapelanggarana = $request->file('file');
+    // public function importexcelpelanggarana(Request $request){
+    //     $datapelanggarana = $request->file('file');
 
-        $namafile = $datapelanggarana->getClientOriginalName();
-        $datapelanggarana->move('ViolationaData', $namafile);
+    //     $namafile = $datapelanggarana->getClientOriginalName();
+    //     $datapelanggarana->move('ViolationaData', $namafile);
 
-        Excel::import(new ViolationaImport, \public_path('/ViolationaData/'.$namafile));
-        return \redirect()->back();
-    }
+    //     Excel::import(new ViolationaImport, \public_path('/ViolationaData/'.$namafile));
+    //     return \redirect()->back();
+    // }
 }

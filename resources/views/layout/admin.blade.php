@@ -264,7 +264,7 @@
             <a href="/pelanggarana" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                Data Pelanggaran Asrama A
+                Data Pelanggaran
                
               </p>
             </a>
