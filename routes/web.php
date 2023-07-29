@@ -5,6 +5,8 @@ use App\Http\Controllers\StudentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AsramaController;
 use App\Http\Controllers\ViolationaController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\MalasngodingController;
 use App\Models\Student;
 
 /*
@@ -77,3 +79,9 @@ Route::get('/tampilkandatapelanggarana/{id}',[ViolationaController::class, 'tamp
 Route::post('/updatedatapelanggarana/{id}',[ViolationaController::class, 'updatedatapelanggarana'])->name('updatedatapelanggarana');
 
 Route::get('/deletepelanggarana/{id}',[ViolationaController::class, 'delete'])->name('delete');
+
+//Notifikasi
+// Route::get('/kirimemail',[MalasngodingController::class, 'index']);
+// Route::get('/contact', [ContactController::class, 'showContactForm'])->name('showContactForm');
+// Route::post('/contact', [ContactController::class, 'sendMail'])->name('sendMail');
+// Route::post('/contact', 'Contact@sendMail');

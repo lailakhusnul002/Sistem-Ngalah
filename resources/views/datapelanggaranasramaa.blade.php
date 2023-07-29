@@ -82,7 +82,7 @@
 
 
         </div>
-        <div class="col">
+        <div class="col-auto">
             <!-- <div class="card">
                 <div class="card-body"> -->
     
@@ -92,7 +92,8 @@
                             {{ $message }}
                         </div>
                         @endif --}}
-                        <table id="example1" class="table table-bordered table-striped">
+                        
+                        <table id="example1" class="table table-bordered table-striped table-sm">
                             <thead>
                                 <tr>
                                     <th scope="row">No</th>
@@ -104,6 +105,7 @@
                                     <th>Jenis Pelanggaran</th>
                                     <th>Hukuman</th>
                                     <th>Dibuat</th>
+                                    <th>Kirim Notifikasi</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -125,6 +127,15 @@
                                     <td>{{ $row->hukuman }}</td>
                                    
                                     <td>{{ $row->created_at->format('d F Y') }}</td>
+                                    <!-- <td><a href="https://api.whatsapp.com/send?phone={{$row->user->whatsapp}}" target="_blank">{{$row->user->whatsapp}}</a></td> -->
+                                    <td>
+  <a href="https://api.whatsapp.com/send?phone={{$row->user->whatsapp}}&text=Assalamualaikum%2C%20Kami%20dari%20pengurus%20keamanan%20Pondok%20Pesantren%20Ngalah%20Menginformasikan%20bahwa%20santri%20yang%20bernama%20-{{$row->user->name}}-%20telah%20melakukan%20pelanggaran.%20Silakan%20cek%20di%20aplikasi%20monitoring%20terkait%20detail%20pelanggarannya" target="_blank" class="btn btn-warning btn-sm mb-2">
+    WhatsApp
+  </a>
+</td>
+
+
+
             
                                     <td class="row">
                                         <a href="/tampilkandatapelanggarana/{{ $row->id }}" class="btn btn-info btn-sm mb-2">Edit</a>

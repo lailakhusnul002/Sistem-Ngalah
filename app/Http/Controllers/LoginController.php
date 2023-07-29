@@ -29,6 +29,7 @@ class LoginController extends Controller
         User::create([
             'id_yayasan' => $request->id_yayasan,
             'name' => $request->name,
+            'whatsapp' => $request->whatsapp,
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),

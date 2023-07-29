@@ -33,7 +33,7 @@
             <input type="text" class="form-control" name="id_yayasan" placeholder="ID Yayasan">
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
+                <span class=""></span>
               </div>
             </div>
           </div>
@@ -41,10 +41,41 @@
             <input type="text" class="form-control" name="name" placeholder="Name">
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
+                <span class=""></span>
               </div>
             </div>
           </div>
+          <!-- <div class="input-group mb-3">
+            <input type="text" class="form-control" name="whatsapp" placeholder="Gunakan Format +62">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class=""></span>
+              </div>
+            </div>
+          </div> -->
+          <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+      <span>+62</span>
+    </div>
+  </div>
+  <input type="text" class="form-control" name="whatsapp" placeholder="Gunakan Format +62">
+</div>
+
+<script>
+  // Ambil elemen input nomor telepon
+  var inputNumber = document.querySelector('input[name="whatsapp"]');
+
+  // Saat input nomor telepon berubah, tambahkan otomatis "+62" di depannya
+  inputNumber.addEventListener('input', function() {
+    if (inputNumber.value.trim() !== '') {
+      if (!inputNumber.value.startsWith('+62')) {
+        inputNumber.value = '+62' + inputNumber.value;
+      }
+    }
+  });
+</script>
+
           <div class="input-group mb-3">
             <input type="email" class="form-control" name="email" placeholder="Email">
             <div class="input-group-append">
